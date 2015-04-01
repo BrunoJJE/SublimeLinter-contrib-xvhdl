@@ -1,0 +1,10 @@
+SublimeLinter-contrib-xvhdl
+-------------------------------
+This linter plugin for SublimeLinter provides an interface to xvhdl.
+
+** IMPORTANT! **
+
+Before this plugin will activate, you *must*
+follow the installation instructions here:
+
+https://github.com/BrunoJJE/SublimeLinter-contrib-xvhdl
