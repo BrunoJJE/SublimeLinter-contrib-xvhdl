@@ -22,7 +22,7 @@ class Xvhdl(Linter):
     version_args = '--version --nolog'
     version_re = r'Vivado Simulator (?P<version>\d+\.\d+)'
     version_requirement = '>= 2014.4'
-    tempfile_suffix = '-'
+    tempfile_suffix = 'vhd'
 
     # Here is a sample xvhdl error output:
     # ----8<------------
@@ -44,11 +44,6 @@ class Xvhdl(Linter):
         """
 
         match, line, col, error, warning, message, near = super().split_match(match)
-
-        # Not sure the filename check is required, but we do it
-        # anyway just in case...
-        if match and match.group('path') != self.filename:
-            match = None
 
         if match:
             message = '[xvhdl] ' + message
