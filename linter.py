@@ -18,16 +18,17 @@ class Xvhdl(Linter):
     """Provides an interface to xvhdl (from Xilinx Vivado Simulator)."""
 
     name = 'xvhdl'
-    cmd = 'xvhdl @'
+    cmd = 'xvhdl ${file}'
     defaults = {
-        'selector': 'source.vhdl',
+        'selector': 'source.vhdl, source.vhd',
     }
+    tempfile_suffix = 'vhd'
 
     # the following attributes are marked useless for SL4
     #version_args = '--version --nolog'
     #version_re = r'Vivado Simulator (?P<version>\d+\.\d+)'
     #version_requirement = '>= 2014.4'
-    #tempfile_suffix = 'vhd'
+    
 
     # Here is a sample xvhdl error output:
     # ----8<------------
